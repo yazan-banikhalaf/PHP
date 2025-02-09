@@ -3,7 +3,7 @@
 $simpleArray[] = 6;
 // echo $simpleArray[0];
 
-$alpha = ['b' , 'c' , 'a'];
+$alpha = ['a' , 'b' , 'c'];
 // var_dump(count($alpha));
 // sort($alpha);
 // var_dump($alpha);
@@ -21,6 +21,8 @@ $associativeArray['last_name'] = 'Ahmad';
 // asort($associativeArray);
 // var_dump($associativeArray);
 // ksort($associativeArray);
+// var_dump($associativeArray);
+// rsort($associativeArray);
 // var_dump($associativeArray);
 
 $multidimensionalArray = [
@@ -47,4 +49,28 @@ $multidimensionalAssociativeArray = [
 // }
 
 $numbers = range(1,5);
-echo json_encode($numbers, JSON_PRETTY_PRINT);
+// echo json_encode($numbers, JSON_PRETTY_PRINT);
+
+$squared = array_map(fn($n) => $n ** 2, $numbers);
+$sum = array_sum($numbers);
+$reversed = array_reverse($numbers);
+// var_dump($reversed);
+// echo json_encode($reversed, JSON_PRETTY_PRINT);
+
+$sum = 0;
+for ($i = 0; $i < count($squared); $i++) {
+    $sum += $squared[$i];
+};
+// echo $sum;
+
+$moreNumbers = [0, ...$numbers, 6];
+// echo json_encode($moreNumbers, JSON_PRETTY_PRINT);
+
+[$first, ,$third] = $alpha;
+// var_dump($first, $third);
+
+for($i = count($numbers) - 1; $i >= 0; $i--) {
+    $reversed = $numbers[$i] . ' ';
+    // echo $reversed;
+} 
+// var_dump( array_reverse($numbers));
